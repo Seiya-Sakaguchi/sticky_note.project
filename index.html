@@ -9,10 +9,20 @@
   <h1>Sticky Note App</h1>
   <p id="userLabel"></p>
 
-  <div class="task-input">
-    <input type="text" id="taskText" placeholder="新しいタスクを入力">
-    <button onclick="addTask()">追加</button>
-  </div>
+  <h3>通常業務</h3>
+    <input type="text" id="input-normal" placeholder="例：日報の記入">
+    <button onclick="addTask('normal')">追加</button>
+
+  <h3>共有・報告業務</h3>
+    <input type="text" id="input-report" placeholder="例：ミーティング準備">
+    <button onclick="addTask('report')">追加</button>
+
+  <h3>優先・緊急業務</h3>
+    <input type="text" id="input-urgent" placeholder="例：クレーム対応">
+    <button onclick="addTask('urgent')">追加</button>
+
+  <div id="stage-todo"></div>
+
 
   <div class="board">
     <div class="column" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
