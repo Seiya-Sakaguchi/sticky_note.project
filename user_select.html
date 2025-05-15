@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ユーザー選択</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Sticky Note App</h1>
+    <p>ユーザー名を入力してください</p>
+    <input type="text" id="username" placeholder="例：tanaka">
+    <button onclick="goToUserPage()">開始する</button>
+  </div>
+
+  <script>
+    function goToUserPage() {
+      const username = document.getElementById("username").value.trim();
+      if (username) {
+        location.href = `index.html?user=${encodeURIComponent(username)}`;
+      } else {
+        alert("ユーザー名を入力してください");
+      }
+    }
+  </script>
+</body>
+</html>
