@@ -5,15 +5,31 @@ document.getElementById("userLabel").textContent = `ユーザー: ${username}`;
 
 let taskId = 0;
 
-function addTask() {
-  const text = document.getElementById("taskText").value.trim();
-  if (!text) return;
+function addTask(type) {
+  const inputId = {
+    normal: "input-normal",
+    report: "input-report",
+    urgent: "input-urgent"
+  };
 
-  const task = createTaskElement(text);
-  document.getElementById("todo").appendChild(task);
-  saveData();
-  document.getElementById("taskText").value = "";
+  const colorClass = {
+    normal: "right-green",
+    report: "right-blue",
+    urgent: "pink"
+  };
+
+  const input = document.getElementById(inputId[type]);
+  const title = input.value;
+  if (title.trim() === "") return;
+
+  const note = document.createElement("div");
+  note.classList.add("note", colorClass[type]);
+  note.innerText = title;
+
+  document.getElementById("stage-todo").appendChild(note);
+  input.value = ""; // 入力欄リセット
 }
+
 
 function createTaskElement(text) {
   const task = document.createElement("div");
