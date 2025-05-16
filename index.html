@@ -9,25 +9,28 @@
 <body>
   <!-- ページタイトル（見出し） -->
   <h1>Sticky Note App</h1>
-  <!-- 初期画面で入力されたユーザーネームを表示 -->
+  <!-- 初期画面で入力されたユーザーネームを表示 document.getElementById("userLabel").textContent = `ユーザー: ${username}` -->
   <p id="userLabel"></p>
 
   <div class="note">
   <!-- 付箋作成ウィンドウ（３つ） -->
+  <div id="window1">
   <h3>通常業務</h3>
-    <input type="text" id="input-normal" placeholder="例：日報の記入">
-    <button onclick="addTask('normal')">追加</button>
-
-  <h3>共有・報告業務</h3>
-    <input type="text" id="input-report" placeholder="例：ミーティング準備">
-    <button onclick="addTask('report')">追加</button>
-
-  <h3>優先・緊急業務</h3>
-    <input type="text" id="input-urgent" placeholder="例：クレーム対応">
-    <button onclick="addTask('urgent')">追加</button>
-
+    <input type="text" id="input-low" placeholder="例：日報の記入">
+    <button onclick="addTask('low')">追加</button>
   </div>
-  <!-- 今はわからないIDタグ -->
+  <div id="window2">
+  <h3>共有・報告業務</h3>
+    <input type="text" id="input-normal" placeholder="例：ミーティング準備">
+    <button onclick="addTask('normal')">追加</button>
+  </div>
+  <div id="window3">
+  <h3>優先・緊急業務</h3>
+    <input type="text" id="input-high" placeholder="例：クレーム対応">
+    <button onclick="addTask('high')">追加</button>
+  </div>
+  </div>
+  <!-- 出来上がった付箋を入れるための箱 -->
   <div id="stage-todo"></div>
 
   <!-- 表示フィールド（３つのステージで分割） -->

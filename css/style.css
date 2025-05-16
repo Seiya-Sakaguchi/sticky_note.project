@@ -1,3 +1,6 @@
+
+/* --------------------共通レイアウト（背景）----------------------- */
+
 /* 画面の設定 */
 body {
   font-family: sans-serif;
@@ -10,16 +13,14 @@ h1 {
 }
 
 
+
 /* 初期ページの名前入力部分 */
 .container {
   text-align: center;
   margin-top: 100px;
 }
-/* 今は存在しない */
-.task-input {
-  text-align: center;
-  margin: 20px 0;
-}
+
+/* -----------------------進行管理ホワイトボード-------------------------- */
 /* ３つのステージ全体のレイアウト */
 .board {
   display: flex;
@@ -36,46 +37,60 @@ h1 {
   border-radius: 5px;
 }
 
-/* .task1 {
-  background: #B0E2FF;
-  padding: 8px;
-  margin: 5px 0;
-  border-radius: 3px;
-  cursor: move;
-}
+/* ------------------付箋エリアレイアウト--------------------- */
 
-.task2 {
-  background: #d7ffd7;
-  padding: 8px;
-  margin: 5px 0;
-  border-radius: 3px;
-  cursor: move;
-}
-
-.task {
-  background: #ffc9d2;
-  padding: 8px;
-  margin: 5px 0;
-  border-radius: 3px;
-  cursor: move;
-}
- */
-
+/* 付箋制作エリア（タスク入力欄のレイアウト） */
 .note {
-  padding: 10px;
-  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 50px;
+  margin: 30px;
   border-radius: 4px;
   font-weight: bold;
 }
+#window1 {
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
+#window2 {
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
+#window3 {
+  margin-left: 6rem;
+  margin-right: 6rem;
+} 
 
-.yellow {
-  background-color: #d7ffd7;
+/* 付箋のレイアウト */
+.task {
+  width: 200px;
+  min-height: 40px;
+  margin: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+  font-size: 14px;
+  line-height: 1.4;
+  word-break: break-word;
+  background-color: #ffff88;
+  position: relative;
+  transition: transform 0.1s ease;
+}
+/* 付箋の動き */
+.sticky:hover {
+  transform: scale(1.02);
 }
 
-.blue {
+/* 通常業務の付箋 */
+.right-blue {
   background-color: #B0E2FF;
 }
-
-.red {
+/* 共有・報告業務の付箋 */
+.right-green {
+  background-color: #d7ffd7;
+}
+/* 緊急業務の付箋 */
+.pink {
   background-color: #ffc9d2;
 }
