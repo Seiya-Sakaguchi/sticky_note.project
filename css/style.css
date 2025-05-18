@@ -8,22 +8,32 @@
 }
 /* 画面の設定 */
 body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/1.png"); /* ←画像のパスに注意 */
+  background-repeat: no-repeat;
+  background-size: cover;           /* ✔画面いっぱいに拡大（縦横比保持） */
+  background-position: center;      /* ✔中央に配置 */
+  background-attachment: fixed;     /* ✔スクロールしても背景は固定（任意） */
   font-family: sans-serif;
-  margin: 20px;
-  background: #fff;
 }
 header {
-  width: 100%;
-  height: 20%;
-  background: #FF8B20;
-  display: flex;
-  justify-content: center;
+  
+}
 
+footer {
+  
 }
 
 /* ページタイトル */
 h1 {
   text-align: center;
+  font-size: 4rem;
+  font-family: '丸ゴシック', sans-serif;
+  font-style: normal;
+  color: coral;
+  padding-top: 6rem;
+  background: yellow;
 }
 
 
@@ -44,7 +54,7 @@ h1 {
 }
 .box {
   font-size: 1.5rem;
-  padding: 15rem;
+  padding: 10rem;
 }
 /* -----------------------進行管理ホワイトボード-------------------------- */
 /* ３つのステージ全体のレイアウト */
