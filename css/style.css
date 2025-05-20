@@ -1,105 +1,181 @@
 
 /* --------------------共通レイアウト（背景）----------------------- */
-/* ブラウザによる初期設定を無効化 */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 /* 画面の設定 */
 body {
   margin: 0;
   padding: 0;
-  background-image: url("../images/1.png"); /* ←画像のパスに注意 */
+  background-image: url("../images/sample03.png"); /* ←画像のパスに注意 */
   background-repeat: no-repeat;
   background-size: cover;           /* ✔画面いっぱいに拡大（縦横比保持） */
   background-position: center;      /* ✔中央に配置 */
   background-attachment: fixed;     /* ✔スクロールしても背景は固定（任意） */
-  font-family: sans-serif;
-}
-header {
-  
+  font-family: 'Rounded M PLUS 1c', 'Noto Sans JP', sans-serif;
 }
 
-footer {
-  
+/* 初期ページタイトル */
+#top_title {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5.5rem;
+  color: black;
+  border-radius: 1rem;
+  box-shadow: 10px 10px 0 #41dd87;
+  border-style: solid;
+  border-color: #41dd87;
+  padding: 0.5rem 1rem;
 }
-
-/* ページタイトル */
-h1 {
-  text-align: center;
-  font-size: 4rem;
-  font-family: '丸ゴシック', sans-serif;
-  font-style: normal;
-  color: coral;
-  padding-top: 6rem;
-  background: yellow;
-}
-
-
 
 /* 初期ページの名前入力部分 */
-.container {
+.box {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  margin-top: 100px;
+  font-size: 2rem;
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  box-shadow: 10px 10px 0 #FF8B20;
+  border-style: solid;
+  border-color: #FF8B20;
+  font-weight: bold;
+}
+
+.box input {
+  padding: 0.5rem;
+  width: 250px;
+  margin: 1rem 0rem 0.5rem ;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: #555;
+}
+
+.box button {
+  padding: 0.5rem 1rem;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: white;
+  background-color: #FF8B20;
+  border-radius: 8px;
+  transition: 0.5;
+  transition-timing-function: ease;
+}
+button:hover {
+  scale: 1.2;
+}
+
+
+/* -----------------------進行管理ホワイトボード-------------------------- */
+/* 付箋ページのタイトル */
+#main_title {
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: black;
+  padding: 0.5rem 1rem;
 }
 
 /* 付箋ページのユーザーネーム表示 */
 #userLabel {
-  font-size: medium;
-  font-family: Arial, Helvetica, sans-serif;
-  display: flex;
-  justify-content: end;
-  padding: 2rem;
+  font-size: large;
+  font-family: 'Rounded M PLUS 1c', 'Noto Sans JP', sans-serif;
+  position: absolute;
+  top: 2%;
+  right: 2%;
 }
-.box {
-  font-size: 1.5rem;
-  padding: 10rem;
-}
-/* -----------------------進行管理ホワイトボード-------------------------- */
-/* ３つのステージ全体のレイアウト */
-.board {
-  display: flex;
-  justify-content: space-around;
-  gap: 10px;
-}
-/* 各ステージのレイアウト */
-.column {
-  background: #fff;
-  border: 1px solid #ccc;
-  width: 30%;
-  min-height: 300px;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: #FF8B20;
-}
-
-/* ------------------付箋エリアレイアウト--------------------- */
 
 /* 付箋制作エリア（タスク入力欄のレイアウト） */
 .note {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  position: relative;
   padding: 50px;
   margin: 30px;
   border-radius: 4px;
   font-weight: bold;
 }
+
 #window1 {
-  margin-left: 6rem;
-  margin-right: 6rem;
+  position: absolute;
+  top: 80%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+#window1 input {
+  border: solid;
+  border-radius: 8px;
+}
+#window1 button {
+  background-color: #B0E2FF;
+  border-radius: 8px;
+  padding: 0.2rem;
+  transition: 0.5;
+  transition-timing-function: ease;
 }
 #window2 {
-  margin-left: 6rem;
-  margin-right: 6rem;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}#window2 input {
+  border: solid;
+  border-color: #555;
+  border-radius: 8px;
+}
+#window2 button {
+  background-color: #d7ffd7;
+  border-radius: 8px;
+  padding: 0.2rem;
+  transition: 0.5;
+  transition-timing-function: ease;
 }
 #window3 {
-  margin-left: 6rem;
-  margin-right: 6rem;
+  position: absolute;
+  top: 80%;
+  left: 84%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 } 
+#window3 input {
+  border: solid;
+  border-radius: 8px;
+}
+#window3 button {
+  background-color: #ffc9d2;
+  border-radius: 8px;
+  padding: 0.2rem;
+  transition: 0.5;
+  transition-timing-function: ease;
+}
 
-/* 付箋のレイアウト */
+/* ３つのステージ全体のレイアウト */
+.board {
+  display: flex;
+  justify-content: space-around;
+  gap: 5px;
+}
+/* 各ステージのレイアウト */
+.column {
+  background: #fff;
+  border: 1px solid #ccc;
+  width: 32%;
+  min-height: 300px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 10px 10px 0 #41dd87;
+}
+
+
+
+
+
+/* ----------------------------付箋のレイアウト---------------------- */
 .task {
   width: 200px;
   min-height: 40px;
@@ -110,6 +186,7 @@ h1 {
   font-size: 14px;
   line-height: 1.4;
   word-break: break-word;
+  /* デフォルトカラーを設定 */
   background-color: #ffff88;
   position: relative;
   transition: transform 0.1s ease;
