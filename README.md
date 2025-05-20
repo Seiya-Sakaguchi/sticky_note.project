@@ -6,6 +6,8 @@
 
 - 業務効率化（業務漏れ防止・進捗可視化・チーム連携）
 - 資源保護（紙の付箋を使わない、デジタル化によるエコ化）
+![stickyapp_top](https://github.com/user-attachments/assets/5dacb5fe-0cf4-45b5-b792-d6d8b6355d61)
+![stickyapp_main](https://github.com/user-attachments/assets/a5e56b27-513b-46f6-a6de-20b55e03f983)
 
 ## 想定ユーザー
 
@@ -29,6 +31,7 @@
 
 - HTML / CSS / JavaScript
 - sessionStorage（ローカル保存による簡易記憶）
+
 - Visual Studio Code + Live Server
 - Git / GitHub（バージョン管理）
 
