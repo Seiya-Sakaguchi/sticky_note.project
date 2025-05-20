@@ -109,6 +109,8 @@ button:hover {
 #window1 input {
   border: solid;
   border-radius: 8px;
+  border-color: #555;
+  background-color: #fff;
 }
 #window1 button {
   background-color: #B0E2FF;
@@ -123,10 +125,12 @@ button:hover {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-}#window2 input {
+}
+#window2 input {
   border: solid;
   border-color: #555;
   border-radius: 8px;
+  background-color: #fff;
 }
 #window2 button {
   background-color: #d7ffd7;
@@ -145,6 +149,8 @@ button:hover {
 #window3 input {
   border: solid;
   border-radius: 8px;
+  border-color: #555;
+  background-color: #fff;
 }
 #window3 button {
   background-color: #ffc9d2;

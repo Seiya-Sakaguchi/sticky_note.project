@@ -1,58 +1,56 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>付箋タスク管理</title>
-  <!-- リセットCSS -->
-  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-  <!-- CSSを取り込む -->
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <header>
-  <!-- ページタイトル（見出し） -->
-  <h1 id="main_title">Sticky Note App</h1>
+  <head>
+    <meta charset="UTF-8">
+    <title>付箋タスク管理</title>
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <!-- CSSを取り込む -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header>
+      <!-- ページタイトル（見出し） -->
+      <h1 id="main_title">Sticky Note App</h1>
+    </header>
+    <!-- 初期画面で入力されたユーザーネームを表示 document.getElementById("userLabel").textContent = `ユーザー: ${username}` -->
+    <p id="userLabel"></p>
 
-  </header>
-  <!-- 初期画面で入力されたユーザーネームを表示 document.getElementById("userLabel").textContent = `ユーザー: ${username}` -->
-  <p id="userLabel"></p>
+    <div class="note">
+    <!-- 付箋作成ウィンドウ（３つ） -->
+      <div id="window1">
+        <h3>業務レベル：低</h3>
+          <input type="text" id="input-low" placeholder="例：担当の清掃箇所">
+          <button onclick="addTask('low')">追加</button>
+      </div>
+      <div id="window2">
+        <h3>業務レベル：中</h3>
+          <input type="text" id="input-normal" placeholder="例：問い合わせ返信">
+          <button onclick="addTask('normal')">追加</button>
+      </div>
+      <div id="window3">
+        <h3>業務レベル：高</h3>
+          <input type="text" id="input-high" placeholder="例：月末書類作成">
+          <button onclick="addTask('high')">追加</button>
+      </div>
+    </div>
+    
 
-  <div class="note">
-  <!-- 付箋作成ウィンドウ（３つ） -->
-  <div id="window1">
-  <h3>通常業務</h3>
-    <input type="text" id="input-low" placeholder="例：日報の記入">
-    <button onclick="addTask('low')">追加</button>
-  </div>
-  <div id="window2">
-  <h3>共有・報告業務</h3>
-    <input type="text" id="input-normal" placeholder="例：ミーティング準備">
-    <button onclick="addTask('normal')">追加</button>
-  </div>
-  <div id="window3">
-  <h3>優先・緊急業務</h3>
-    <input type="text" id="input-high" placeholder="例：クレーム対応">
-    <button onclick="addTask('high')">追加</button>
-  </div>
-  </div>
-  <!-- 出来上がった付箋を入れるための箱 -->
-  <div id="stage-todo"></div>
-
-  <!-- 表示フィールド（３つのステージで分割） -->
-  <div class="board">
-    <div class="column" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
-      <h2>着手前</h2>
+    <!-- 表示フィールド（３つのステージで分割） -->
+    <div class="board">
+      <div class="column" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h2>着手前</h2>
+        <!-- 出来上がった付箋を入れるための箱 -->
+        <div id="stage-todo"></div>
+      </div>
+      <div class="column" id="doing" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h2>進行中</h2>
+      </div>
+      <div class="column" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h2>完了</h2>
+      </div>
     </div>
-    <div class="column" id="doing" ondrop="drop(event)" ondragover="allowDrop(event)">
-      <h2>進行中</h2>
-    </div>
-    <div class="column" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
-      <h2>完了</h2>
-    </div>
-  </div>
-  
-  <footer></footer>
-  <!-- JSを取り込む -->
-  <script src="js/app.js"></script>
-</body>
+    <!-- JSを取り込む -->
+    <script src="js/app.js"></script>
+  </body>
 </html>

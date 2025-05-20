@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>ユーザー選択</title>
-  <!-- リセットCSS -->
-  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-  <!-- CSSを取り込む -->
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <div class="container">
-    <header>
-      <h1 id="top_title">Sticky Note App</h1>
-    </header>
-    
-    <div class="box">
-      <p>ユーザー名を入力してください</p>
-      <input type="text" id="username" placeholder="例：tanaka">
-      <button onclick="goToUserPage()">開始する</button>
-    </div>
-    
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>ユーザー選択</title>
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <!-- CSSを取り込む -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
 
-  <script>
-    function goToUserPage() {
-      const username = document.getElementById("username").value.trim();
-      if (username) {
-        location.href = `index.html?user=${encodeURIComponent(username)}`;
-      } else {
-        alert("ユーザー名を入力してください");
+  <body>
+    <div class="container">
+      <header>
+        <h1 id="top_title">Sticky Note App</h1>
+      </header>
+      
+      <div class="box">
+        <p>ユーザー名を入力してください</p>
+        <input type="text" id="username" placeholder="例：佐藤">
+        <button onclick="goToUserPage()">開始する</button>
+      </div>
+      
+    </div>
+
+    <script>
+      function goToUserPage() {
+        const username = document.getElementById("username").value.trim();
+        if (username) {
+          location.href = `index.html?user=${encodeURIComponent(username)}`;
+        } else {
+          alert("ユーザー名を入力してください");
+        }
       }
-    }
-  </script>
-  <footer></footer>
-</body>
+    </script>
+  </body>
 </html>
