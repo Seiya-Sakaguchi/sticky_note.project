@@ -8,46 +8,50 @@
     <!-- CSSを取り込む -->
     <link rel="stylesheet" href="css/style.css">
   </head>
+
+
   <body>
-    <header>
-      <!-- ページタイトル（見出し） -->
-      <h1 id="main_title">Sticky Note App</h1>
-    </header>
-    <!-- 初期画面で入力されたユーザーネームを表示 document.getElementById("userLabel").textContent = `ユーザー: ${username}` -->
-    <p id="userLabel"></p>
+    <div class="wrapper">
+      <header>
+        <!-- ページタイトル（見出し） -->
+        <h1 id="main_title">Sticky Note App</h1>
+      </header>
+      <!-- 初期画面で入力されたユーザーネームを表示 document.getElementById("userLabel").textContent = `ユーザー: ${username}` -->
+      <p id="userLabel"></p>
 
-    <div class="note">
-    <!-- 付箋作成ウィンドウ（３つ） -->
-      <div id="window1">
-        <h3>業務レベル：低</h3>
-          <input type="text" id="input-low" placeholder="例：担当の清掃箇所">
-          <button onclick="addTask('low')">追加</button>
+      <div class="note">
+      <!-- 付箋作成ウィンドウ（３つ） -->
+        <div id="window1">
+          <h3>業務レベル：低</h3>
+            <input type="text" id="input-low" placeholder="例：担当の清掃箇所">
+            <button onclick="addTask('low')">追加</button>
+        </div>
+        <div id="window2">
+          <h3>業務レベル：中</h3>
+            <input type="text" id="input-normal" placeholder="例：問い合わせ返信">
+            <button onclick="addTask('normal')">追加</button>
+        </div>
+        <div id="window3">
+          <h3>業務レベル：高</h3>
+            <input type="text" id="input-high" placeholder="例：月末書類作成">
+            <button onclick="addTask('high')">追加</button>
+        </div>
       </div>
-      <div id="window2">
-        <h3>業務レベル：中</h3>
-          <input type="text" id="input-normal" placeholder="例：問い合わせ返信">
-          <button onclick="addTask('normal')">追加</button>
-      </div>
-      <div id="window3">
-        <h3>業務レベル：高</h3>
-          <input type="text" id="input-high" placeholder="例：月末書類作成">
-          <button onclick="addTask('high')">追加</button>
-      </div>
-    </div>
-    
+      
 
-    <!-- 表示フィールド（３つのステージで分割） -->
-    <div class="board">
-      <div class="column" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <h2>着手前</h2>
-        <!-- 出来上がった付箋を入れるための箱 -->
-        <div id="stage-todo"></div>
-      </div>
-      <div class="column" id="doing" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <h2>進行中</h2>
-      </div>
-      <div class="column" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <h2>完了</h2>
+      <!-- 表示フィールド（３つのステージで分割） -->
+      <div class="board">
+        <div class="column" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <h2>着手前</h2>
+          <!-- 出来上がった付箋を入れるための箱 -->
+          <div id="stage-todo"></div>
+        </div>
+        <div class="column" id="doing" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <h2>進行中</h2>
+        </div>
+        <div class="column" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <h2>完了</h2>
+        </div>
       </div>
     </div>
     <!-- JSを取り込む -->

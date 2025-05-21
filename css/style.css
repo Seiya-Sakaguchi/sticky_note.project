@@ -4,40 +4,49 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("../images/sample03.png"); /* ←画像のパスに注意 */
+  background-image: url("../images/sample03.png");
   background-repeat: no-repeat;
-  background-size: cover;           /* ✔画面いっぱいに拡大（縦横比保持） */
-  background-position: center;      /* ✔中央に配置 */
-  background-attachment: fixed;     /* ✔スクロールしても背景は固定（任意） */
+  background-size: cover;           
+  background-position: center;      
+  background-attachment: fixed;     
   font-family: 'Rounded M PLUS 1c', 'Noto Sans JP', sans-serif;
+}
+
+/* レスポンシブ対応ラッパークラス */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
 }
 
 /* 初期ページタイトル */
 #top_title {
   position: absolute;
-  top: 45%;
+  top: 45vh;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 5.5rem;
+  font-size: 3.5rem;
   color: black;
+  white-space: nowrap;
   border-radius: 1rem;
   box-shadow: 10px 10px 0 #41dd87;
   border-style: solid;
   border-color: #41dd87;
-  padding: 0.5rem 1rem;
+  padding: 1.5rem 2rem;
 }
 
 /* 初期ページの名前入力部分 */
 .box {
   position: absolute;
-  top: 65%;
+  top: 67vh;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: black;
   padding: 0.5rem 1rem;
-  border-radius: 1rem;
+  border-radius: 8px;
   box-shadow: 10px 10px 0 #FF8B20;
   border-style: solid;
   border-color: #FF8B20;
@@ -213,4 +222,37 @@ button:hover {
 /* 緊急業務の付箋 */
 .pink {
   background-color: #ffc9d2;
+}
+
+
+
+
+
+
+/* 以下マルチデバイス対応用のメディアクエリ */
+/* スマホ用 */
+@media (max-width: 767px) {
+  .wrapper {
+    padding: 0 10px;
+    max-width: 100%;
+    position: relative;
+  }
+
+  body {
+    border: 5px solid red !important;
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/stickyapp_mobile.png");
+    background-color: aqua;
+    background-repeat: no-repeat;
+    background-size: cover;           
+    background-position: center;      
+    /* background-attachment: fixed;      */
+    font-family: 'Rounded M PLUS 1c', 'Noto Sans JP', sans-serif;
+  }
+
+  #top_title {
+    font-size: small;
+    top: 50vh;
+  }
 }
